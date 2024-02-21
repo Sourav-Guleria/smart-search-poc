@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_search/app/core/utils/colors.dart';
 import 'package:smart_search/app/features/auth/presentation/pages/login.dart';
-import 'package:smart_search/app/features/home/presentation/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: CustomColors.appPrimaryColor),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const Login(),
     );
   }
 }
