@@ -13,17 +13,13 @@ class CustomColors {
   static const Color lightBlueColor = Color(0xFF67C4F0);
   static const Color lightGreenColor = Color(0xFF10D973);
   static const Color greyColor = Color(0xFFF9F9F9);
-  static const Color darkGreyColor = Color(0xFFEEEEEF);
-
-
-
-
+  static const Color darkGreyColor = Color.fromARGB(255, 184, 184, 203);
 
   static const Color appBarBackgroundColor = Color.fromRGBO(245, 245, 245, 1);
   // static const Color buttonBlueColor = Color.fromRGBO(53, 53, 243, 1);
   static const Color buttonTextColor = Color.fromRGBO(255, 255, 255, 1);
-  static const Color appPrimaryColor = Color.fromRGBO(209,25,71,1.000);
-   static const Color appSecondryColor = Color.fromRGBO(0,114,142,1.000);
+  static const Color appPrimaryColor = Color.fromRGBO(209, 25, 71, 1.000);
+  static const Color appSecondryColor = Color.fromRGBO(0, 114, 142, 1.000);
   static const Color fieldBorderColor = Color.fromRGBO(184, 184, 184, 1);
   static const Color redColor = Color.fromRGBO(243, 9, 9, 1);
   static const Color background = Color(0xFF1E2022);
@@ -66,7 +62,6 @@ class CustomColors {
     'Z': const Color(0xFF2196F3),
   };
 
- 
   static Color rgba0001 = const Color.fromRGBO(0, 0, 0, 1);
   static Color rgba10821151 = const Color.fromRGBO(10, 82, 115, 1);
   static Color rgba254761 = const Color.fromRGBO(2, 54, 76, 1);
@@ -86,7 +81,7 @@ class CustomColors {
   static Color rgba2292292291 = const Color.fromRGBO(229, 229, 229, 1);
   static Color rgba253221901 = const Color.fromRGBO(253, 221, 90, 1);
   static Color rgba1012031061 = const Color.fromRGBO(101, 203, 106, 1);
-  static Color rgba2442462501=const Color.fromRGBO(244, 246, 250, 1);
+  static Color rgba2442462501 = const Color.fromRGBO(244, 246, 250, 1);
   static Color rgba201841661 = const Color.fromRGBO(20, 184, 166, 1);
   static Color rgba591302461 = const Color.fromRGBO(59, 130, 246, 1);
   static Color rgba991022411 = const Color.fromRGBO(99, 102, 241, 1);
@@ -121,11 +116,7 @@ class CustomColors {
   static Color rgba2321411211 = const Color.fromRGBO(232, 141, 121, 1);
   static Color rgba1031962401 = const Color.fromRGBO(103, 196, 240, 1);
 
-
-
-
   static Color rgba2302352461 = const Color.fromRGBO(230, 235, 246, 1);
-
 
   static Color rgba36701041 = const Color.fromRGBO(36, 170, 104, 1);
   static Color rgba2042042511 = const Color.fromRGBO(204, 204, 251, 1);
@@ -177,16 +168,11 @@ class CustomColors {
   static Color rgba21919421 = const Color.fromRGBO(219, 194, 2, 1);
   static Color rgba2322322321 = const Color.fromRGBO(232, 232, 232, 1);
   static Color rgba24524524504 = const Color.fromRGBO(245, 245, 245, 0.4);
-  static Color rgba23983801=const Color.fromRGBO(239,83,80,1);
-
+  static Color rgba23983801 = const Color.fromRGBO(239, 83, 80, 1);
 
   /// Leader ship
   static Color rgba1081081081 = const Color.fromRGBO(108, 108, 108, 1);
   static Color rgba2531831501 = const Color.fromRGBO(253, 183, 150, 1);
   static Color rgba2402172261 = const Color.fromRGBO(240, 217, 226, 1);
   static Color rgba2522402221 = const Color.fromRGBO(252, 240, 222, 1);
-
-
-
-
 }

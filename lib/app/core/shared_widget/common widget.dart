@@ -4,50 +4,37 @@ import 'package:smart_search/app/core/utils/text_style.dart';
 import '../responsive/responsive_width.dart';
 import '../utils/colors.dart';
 
-Widget buttonWidget({
-  required String text,
-  required Color buttonColor,
-  required Function() onTap,
-  Color? textColor,
-}) {
-  return ElevatedButton(
-    onPressed: () {},
-    style: ElevatedButton.styleFrom(
-        backgroundColor: buttonColor,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        textStyle: CustomTextStyle.textStyle500(
-            color: textColor,
-            fontSize: widgetSize(desktop: 14.sp, tablet: 15.sp, mobile: 17.sp),
-            fontStyle: FontStyle.normal)),
-    child: Text(text),
-  );
-}
-
 Widget customButton({
   required String text,
   required Color buttonColor,
   required Function() onTap,
   Color? textColor,
+  double? width,
 }) {
   return GestureDetector(
     onTap: onTap,
     child: Container(
+      width: width,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: buttonColor,
-        borderRadius: BorderRadius.all(
-          Radius.circular(5.sp),
-        ),
-      ),
+          color: buttonColor,
+          borderRadius: const BorderRadius.all(
+            Radius.circular(5),
+          ),
+          boxShadow: const [
+            BoxShadow(
+                color: CustomColors.blackColor,
+                blurRadius: 7.0,
+                offset: Offset(0.0, 0.75)),
+          ]),
       padding: EdgeInsets.symmetric(
         horizontal: widgetSize(desktop: 2.w, tablet: 3.w, mobile: 4.w),
-        vertical: 1.h,
+        vertical: 1.5.h,
       ),
       child: Text(
         text,
         style: CustomTextStyle.textStyle500(
-          fontSize: widgetSize(desktop: 12.sp, tablet: 13.sp, mobile: 14.5.sp),
+          fontSize: widgetSize(desktop: 14.sp, tablet: 15.sp, mobile: 16.sp),
           color: textColor ?? CustomColors.whiteColor,
         ),
       ),

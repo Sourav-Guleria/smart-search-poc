@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:smart_search/app/core/mixins/validation_mixin.dart';
 
 import 'package:smart_search/app/core/responsive/responsive_sizer/responsive_sizer.dart';
+import 'package:smart_search/app/core/responsive/responsive_width.dart';
 import 'package:smart_search/app/core/shared_widget/common%20widget.dart';
 import 'package:smart_search/app/core/utils/colors.dart';
+import 'package:smart_search/app/core/utils/text_style.dart';
 
 class Login extends StatelessWidget with FormValidationMixin {
   Login({super.key});
@@ -46,40 +48,71 @@ class Login extends StatelessWidget with FormValidationMixin {
                         ),
                       ),
                       SizedBox(
-                        height: 15.h,
+                        height: 10.h,
                       ),
-                      TextFormField(
-                        controller: _emailController,
-                        focusNode: _emailFocusNode,
-                        keyboardType: TextInputType.emailAddress,
-                        decoration: const InputDecoration(
-                          labelText: 'Email',
-                          border: OutlineInputBorder(),
+                      Container(
+                        width: 70.w,
+                        padding: EdgeInsets.symmetric(horizontal: 2.w),
+                        decoration: const BoxDecoration(
+                            color: CustomColors.darkGreyColor,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: CustomColors.blackColor,
+                                  blurRadius: 7.0,
+                                  offset: Offset(0.0, 0.75)),
+                            ]),
+                        child: TextFormField(
+                          controller: _emailController,
+                          focusNode: _emailFocusNode,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            helperStyle: CustomTextStyle.textStyle500(
+                              fontSize: widgetSize(
+                                  desktop: 14.sp, tablet: 15.sp, mobile: 16.sp),
+                              color: CustomColors.whiteColor,
+                            ),
+                          ),
+                          validator: validateEmail, // Validating email
+                          onFieldSubmitted: (value) {
+                            _emailFocusNode.unfocus();
+                            FocusScope.of(context)
+                                .requestFocus(_passwordFocusNode);
+                          },
                         ),
-                        validator: validateEmail, // Validating email
-                        onFieldSubmitted: (value) {
-                          _emailFocusNode.unfocus();
-                          FocusScope.of(context)
-                              .requestFocus(_passwordFocusNode);
-                        },
                       ),
                       const SizedBox(height: 16),
-                      TextFormField(
-                        controller: _passController,
-                        focusNode: _passwordFocusNode,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
-                          errorMaxLines: 3,
+                      Container(
+                        width: 70.w,
+                        padding: EdgeInsets.symmetric(horizontal: 2.w),
+                        decoration: const BoxDecoration(
+                            color: CustomColors.darkGreyColor,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: CustomColors.blackColor,
+                                  blurRadius: 7.0,
+                                  offset: Offset(0.0, 0.75)),
+                            ]),
+                        child: TextFormField(
+                          controller: _passController,
+                          focusNode: _passwordFocusNode,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            hintText: 'Password',
+                            helperStyle: CustomTextStyle.textStyle500(
+                              fontSize: widgetSize(
+                                  desktop: 14.sp, tablet: 15.sp, mobile: 16.sp),
+                              color: CustomColors.whiteColor,
+                            ),
+                          ),
+                          validator: validatePassword, // Validating password
+                          onFieldSubmitted: (value) {
+                            _passwordFocusNode.unfocus();
+                          },
                         ),
-                        validator: validatePassword, // Validating password
-                        onFieldSubmitted: (value) {
-                          _passwordFocusNode.unfocus();
-                        },
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 3.h,
                       ),
                       Container(
                         width: 100.w,
@@ -87,18 +120,18 @@ class Login extends StatelessWidget with FormValidationMixin {
                         padding: EdgeInsets.symmetric(
                             vertical: 1.h, horizontal: 1.5.w),
                         child: Image.asset(
-                          'assets/images/eng_fr_logo.jpg',
+                          'assets/images/Picture1.png',
                           alignment: Alignment.center,
-                          height: 10.h,
-                          width: 15.w,
+                          height: 7.h,
+                          width: 10.w,
                           fit: BoxFit.contain,
                         ),
                       ),
                       SizedBox(
-                        height: 5.h,
+                        height: 3.h,
                       ),
                       Center(
-                          child: buttonWidget(
+                          child: customButton(
                               onTap: () {
                                 // if (_formKey.currentState!.validate()) {
                                 //   ScaffoldMessenger.of(context).showSnackBar(
@@ -106,18 +139,20 @@ class Login extends StatelessWidget with FormValidationMixin {
                                 //   );
                                 // }
                               },
+                              width: 50.w,
                               text: "Login",
                               buttonColor: CustomColors.appPrimaryColor,
                               textColor: CustomColors.whiteColor)),
                       SizedBox(
-                        height: 10.h,
+                        height: 5.h,
                       ),
                       Center(
-                          child: buttonWidget(
+                          child: customButton(
                               onTap: () {},
+                              width: 50.w,
                               text: "Sign Up",
-                              buttonColor: CustomColors.appSecondryColor,
-                              textColor: CustomColors.whiteColor)),
+                              buttonColor: CustomColors.darkGreyColor,
+                              textColor: CustomColors.blackColor)),
                     ],
                   ),
                 ),
