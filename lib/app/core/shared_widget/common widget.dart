@@ -1,10 +1,29 @@
-
 import 'package:flutter/material.dart';
 import 'package:smart_search/app/core/responsive/responsive_sizer/responsive_sizer.dart';
 import 'package:smart_search/app/core/utils/text_style.dart';
 import '../responsive/responsive_width.dart';
 import '../utils/colors.dart';
 
+Widget buttonWidget({
+  required String text,
+  required Color buttonColor,
+  required Function() onTap,
+  Color? textColor,
+}) {
+  return ElevatedButton(
+    onPressed: () {},
+    style: ElevatedButton.styleFrom(
+        backgroundColor: buttonColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        textStyle: CustomTextStyle.textStyle500(
+            color: textColor,
+            fontSize: widgetSize(desktop: 14.sp, tablet: 15.sp, mobile: 17.sp),
+            fontStyle: FontStyle.normal)),
+    child: Text(text),
+  );
+}
 
 Widget customButton({
   required String text,
@@ -18,7 +37,7 @@ Widget customButton({
       decoration: BoxDecoration(
         color: buttonColor,
         borderRadius: BorderRadius.all(
-          Radius.circular(10.sp),
+          Radius.circular(5.sp),
         ),
       ),
       padding: EdgeInsets.symmetric(
@@ -36,8 +55,7 @@ Widget customButton({
   );
 }
 
-
-Widget errorWidget({required String errorMsg}){
+Widget errorWidget({required String errorMsg}) {
   return Padding(
     padding: EdgeInsets.symmetric(
       vertical: 20.h,
@@ -52,11 +70,7 @@ Widget errorWidget({required String errorMsg}){
   );
 }
 
-
-
-
-
-Widget loginErrorWidget({required String errorMsg}){
+Widget loginErrorWidget({required String errorMsg}) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,19 +90,14 @@ Widget loginErrorWidget({required String errorMsg}){
       customButton(
         text: "Login",
         buttonColor: CustomColors.buttonBlueColor,
-        onTap: () {
-         
-        },
+        onTap: () {},
         textColor: CustomColors.whiteColor,
       ),
     ],
   );
 }
 
-
-
-
-Widget loaderWidget({EdgeInsets? padding}){
+Widget loaderWidget({EdgeInsets? padding}) {
   return Padding(
     padding: padding ?? EdgeInsets.symmetric(vertical: 40.h, horizontal: 40.w),
     child: const Center(
