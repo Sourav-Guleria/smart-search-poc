@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:smart_search/app/core/responsive/responsive_sizer/responsive_sizer.dart';
 import 'package:smart_search/app/core/shared_widget/common%20widget.dart';
 import 'package:smart_search/app/core/shared_widget/scaffold_wrapper.dart';
 import 'package:smart_search/app/core/utils/colors.dart';
-import 'package:smart_search/app/features/part_details/presentation/pages/part_details.dart';
+import 'package:smart_search/app/features/camera/presentation/pages/camera_preview_page.dart';
+
 
 class ScanPart extends StatefulWidget {
   const ScanPart({super.key});
@@ -32,7 +33,7 @@ class _ScanPartState extends State<ScanPart> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const PartDetails()));
+                                builder: (context) => const CameraPage()));
                       },
                       child: Image.asset(
                         "assets/images/camera_icon.png",

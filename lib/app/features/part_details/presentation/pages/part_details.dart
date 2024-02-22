@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:smart_search/app/core/responsive/responsive_sizer/responsive_sizer.dart';
 import 'package:smart_search/app/core/responsive/responsive_width.dart';
@@ -6,7 +8,8 @@ import 'package:smart_search/app/core/utils/colors.dart';
 import 'package:smart_search/app/core/utils/text_style.dart';
 
 class PartDetails extends StatefulWidget {
-  const PartDetails({super.key});
+  final String image;
+  const PartDetails({super.key,required this.image});
 
   @override
   State<PartDetails> createState() => _PartDetailsState();
@@ -33,8 +36,8 @@ class _PartDetailsState extends State<PartDetails> {
                       padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: Row(
                         children: [
-                          Image.asset(
-                            "assets/images/camera_icon.png",
+                          Image.file(
+                            File(widget.image),
                             width: 30.w,
                             height: 30.w,
                           ),
