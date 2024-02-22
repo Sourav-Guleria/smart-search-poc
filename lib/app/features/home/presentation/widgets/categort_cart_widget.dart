@@ -15,8 +15,17 @@ class CategoryCartWidget extends StatelessWidget {
     return Container(
       width: 40.w,
       // padding: EdgeInsets.all(1.w),
+      decoration: const BoxDecoration(
+          color: CustomColors.appPrimaryColor,
+          // shape: BoxShape.circle, // BoxShape.circle or BoxShape.retangle
+          //color: const Color(0xFF66BB6A),
+          boxShadow: [
+            BoxShadow(
+                color: CustomColors.blackColor,
+                blurRadius: 7.0,
+                offset: Offset(0.0, 0.75)),
+          ]),
       margin: EdgeInsets.all(2.w),
-      color: CustomColors.appPrimaryColor,
       child: Column(
         children: [
           Image.asset(
