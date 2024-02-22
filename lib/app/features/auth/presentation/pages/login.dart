@@ -11,7 +11,7 @@ import 'package:smart_search/app/features/home/presentation/pages/home.dart';
 class Login extends StatelessWidget with FormValidationMixin {
   Login({super.key});
 
-  final GlobalKey _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passController = TextEditingController();
@@ -134,15 +134,12 @@ class Login extends StatelessWidget with FormValidationMixin {
                       Center(
                           child: customButton(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => const Home()));
-                                // if (_formKey.currentState!.validate()) {
-                                //   ScaffoldMessenger.of(context).showSnackBar(
-                                //     const SnackBar(content: Text('Thank you!')),
-                                //   );
-                                // }
+                                if (_formKey.currentState!.validate()) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => const Home()));
+                                }
                               },
                               width: 50.w,
                               text: "Login",
