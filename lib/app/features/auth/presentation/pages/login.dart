@@ -6,6 +6,7 @@ import 'package:smart_search/app/core/responsive/responsive_width.dart';
 import 'package:smart_search/app/core/shared_widget/common%20widget.dart';
 import 'package:smart_search/app/core/utils/colors.dart';
 import 'package:smart_search/app/core/utils/text_style.dart';
+import 'package:smart_search/app/features/home/presentation/pages/home.dart';
 
 class Login extends StatelessWidget with FormValidationMixin {
   Login({super.key});
@@ -133,6 +134,10 @@ class Login extends StatelessWidget with FormValidationMixin {
                       Center(
                           child: customButton(
                               onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Home()));
                                 // if (_formKey.currentState!.validate()) {
                                 //   ScaffoldMessenger.of(context).showSnackBar(
                                 //     const SnackBar(content: Text('Thank you!')),
