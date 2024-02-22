@@ -41,6 +41,7 @@ class _HomeState extends State<Home> {
         builder: (context, orientation, screenType) {
           return ScaffoldWrapper(
             appBarTitle: "HEAVY-DUTY TRUCK & TRAILER PARTS​",
+            isBackButton: false,
             body: SizedBox(
               width: 100.w,
               child: Wrap(

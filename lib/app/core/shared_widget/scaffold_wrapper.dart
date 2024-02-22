@@ -8,21 +8,38 @@ import '../utils/colors.dart';
 class ScaffoldWrapper extends StatelessWidget {
   final String appBarTitle;
   final Widget body;
-  const ScaffoldWrapper(
-      {super.key, required this.body, required this.appBarTitle});
+  bool isBackButton;
+  ScaffoldWrapper(
+      {super.key,
+      required this.body,
+      required this.appBarTitle,
+      this.isBackButton = true});
 
   @override
   Widget build(BuildContext context) {
     return Title(
       color: CustomColors.appPrimaryColor,
-      child: Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          toolbarHeight: 80,
-          backgroundColor: CustomColors.appPrimaryColor,
-          centerTitle: Responsive.isDesktop() ? true : false,
-          title: Flexible(
-            child: Text(
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            toolbarHeight: 80,
+            leadingWidth: isBackButton ? 10.w : 0,
+            backgroundColor: CustomColors.appPrimaryColor,
+            centerTitle: Responsive.isDesktop() ? true : false,
+            leading: isBackButton
+                ? GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      color: CustomColors.whiteColor,
+                      size: 20.sp,
+                    ),
+                  )
+                : const SizedBox(),
+            title: Text(
               appBarTitle,
               maxLines: 2,
               textAlign: TextAlign.center,
@@ -36,17 +53,17 @@ class ScaffoldWrapper extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        body: Container(
-          width: 100.w,
-          height: 100.h - 72,
-          color: CustomColors.appSecondryColor,
-          child: ScrollConfiguration(
-            behavior:
-                ScrollConfiguration.of(context).copyWith(scrollbars: false),
-            child: SingleChildScrollView(
-              child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 1.h), child: body),
+          body: Container(
+            width: 100.w,
+            height: 100.h - 72,
+            color: CustomColors.appSecondryColor,
+            child: ScrollConfiguration(
+              behavior:
+                  ScrollConfiguration.of(context).copyWith(scrollbars: false),
+              child: SingleChildScrollView(
+                child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 1.h), child: body),
+              ),
             ),
           ),
         ),

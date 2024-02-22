@@ -4,9 +4,6 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_search/app/features/part_details/presentation/pages/part_details.dart';
 
-
-
-
 class CameraPage extends StatefulWidget {
   const CameraPage({super.key});
 
@@ -99,7 +96,7 @@ class CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     final xFile = await capturePhoto();
     if (xFile != null) {
       if (xFile.path.isNotEmpty) {
-        navigator.push(
+        navigator.pushReplacement(
           MaterialPageRoute(
             builder: (context) => PartDetails(
               image: xFile.path,
@@ -109,7 +106,6 @@ class CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
       }
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -185,4 +181,3 @@ class CameraPageState extends State<CameraPage> with WidgetsBindingObserver {
     }
   }
 }
-
